@@ -41,7 +41,7 @@ export const fetchData = async (country) => {
 
 export const fetchDailyData = async () => {
     try {
-        const {data} = await axios.get("https://covid19.mathdro.id/api")
+        const {data} = await axios.get("covid19.mathdro.id/api/countries/global")
 
         return data.map(({positive, recovered, death, dateChecked: date}) => ({confirmed: positive, recovered, deaths: death, date}));
     } catch (error) {
